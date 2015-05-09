@@ -23,8 +23,9 @@ rm(energy)
 
 twodays$Global_active_power <- as.numeric(twodays$Global_active_power)
 
+png("plot1.png")
+
 hist(twodays$Global_active_power, freq = TRUE, main = "Global Active Power",
      col = "red", xlab = "Global Active Power (kilowatts)")
 
-dev.copy(png, file = "plot1.png")
 dev.off()

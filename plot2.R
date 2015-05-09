@@ -1,4 +1,4 @@
-## Create a graph using plot() for global active power vs. frequency for the
+## Create a graph using plot() for global active power for the
 ## dates 1-2 Feb 2007 from the household power consumption dataset
 
 library(dplyr)
@@ -24,12 +24,13 @@ rm(energy)
 tdm <- mutate(twodays, datetime = as.POSIXct(paste(twodays$Date, twodays$Time), 
                                              format="%Y-%m-%d %H:%M:%S"))
 
+png("plot2.png")
               
 plot(tdm$datetime, tdm$Global_active_power, type = "l", col = "black", 
-     ylab = "Global Active Power (kilowatts)", xlab = "")
+     ylab = "Global Active Power (kilowatts)", xlab = "", bg = "white")
 
 box(col = "black")
 
-dev.copy(png, file = "plot2.png")
+
 dev.off()
 
