@@ -50,7 +50,7 @@ with(tdm, {
                   c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
                   bty = "n")
            plot(tdm$datetime, tdm$Global_reactive_power, type = "l", col = "black",
-                ylab = "Global_reactive_power")
+                xlab = "datetime", ylab = "Global_reactive_power")
          })
 
 dev.off()
